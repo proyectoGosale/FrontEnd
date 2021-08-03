@@ -1,0 +1,56 @@
+mat-card {
+   box-shadow: 5px 5px 5px #000!important;
+}
+
+.col-12 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+.example-full-width {
+    width: 100%;
+}
+
+a {
+    font-size: 17px;
+}
+
+.text{
+    font-size: 17px;
+}
+
+button {
+    border-radius: 30px;
+    background: #6F7D7E;
+    color: #fff;
+}
+
+.back {
+    background: transparent;
+    color: #000;
+}
+
+.back:hover {
+    color: #000!important;
+}
+
+h1 {
+    font-family: cursive;
+}
+
+.row {
+    height: 100vh!important;
+    place-content: center;
+    flex: 1 0 auto;
+    margin: 0;
+}
+
+.bg {
+    background-image: url(../../../../assets/img/dark-material-bg.7341604eddeafc0dae94.jpg);
+}

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyectoSena';
+
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+  
+  /* variables globales */
+
+  myClass : any;
+  ocultar: any = 0;
+
+  constructor(){}
+
+  openedSidenav(val:any) {
+    console.log(val)
+    this.myClass=val
+  }
+
+  aparecerSidenav(valor: any) {
+    if (valor = null) {
+      this.ocultar = 0;
+    }
+    else {
+      this.ocultar = 1;
+    } 
+  }
+
 }

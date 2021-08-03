@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+ }
+body { 
+    margin: 0; font-family: 'Poppins', sans-serif !important; 
+    font-size: 17px!important;
+}
+
+a:hover {
+    color: #035aa6!important;
+}
+
+button:hover {
+    color: #fff!important;
+}
+
+.text-muted {
+    color: #595858!important;
+}
+
+.btn-primary {
+    background: #6F7D7E!important;
+}
+
+.img-user {
+    height: 70px!important;
+    width: 70px!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.bg-info {
+    background-color: #2C3E50!important;
+}
+
+li {
+    list-style:none!important;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    background-color: #f9f9f9;
+}
+
+::-webkit-scrollbar:vertical {
+    width:5px;
+}
+
+::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+::-webkit-scrollbar:horizontal {
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #797979;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}

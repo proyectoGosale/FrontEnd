@@ -1,0 +1,21 @@
+<mat-toolbar class="text-white p-4 bg-info">
+    <a class="" *ngIf="open==0" type="button" (click)="toggle()"><i class="fa fas fa-bars"></i></a>
+    <span class="example-spacer"></span>
+    <a class="mx-1" type="button">
+        <button mat-button [matMenuTriggerFor]="menu" class="rounded-circle btn">
+            <img src="https://ui-avatars.com/api/?size=100&name=Edinson Castillo" class="user rounded-circle img-user" alt="">
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>mode_edit</mat-icon>
+                <span>Mi perfil</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>logout</mat-icon>
+                <span>Salir</span>
+            </button>
+        </mat-menu>
+
+        <img *ngIf="user!==0" src="../../../assets/img/logo.png" alt="">
+    </a>
+</mat-toolbar>

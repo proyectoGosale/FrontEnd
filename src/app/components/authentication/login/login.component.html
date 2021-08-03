@@ -1,0 +1,158 @@
+<!-- Modulo para Iniciar sesion -->
+
+
+<div class="bg" *ngIf="selectedFormAuthentic===0">
+    <div class="row justify-content-center px-5">
+        <div class="col-12 px-5">
+            <mat-card class="text-center text-muted">
+                <h1>Iniciar sesión</h1>
+                <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+
+                    <div class="container mb-4">
+                        <mat-form-field class="example-full-width" appearance="outline" fxFlex="100">
+                            <mat-icon matSuffix>local_post_office</mat-icon>
+                            <mat-label>Correo electronico</mat-label>
+                            <input type="text" matInput formControlName="email" required>
+                            <mat-error>Campo obligatorio!</mat-error>
+                        </mat-form-field>
+        
+                        <mat-form-field class="example-full-width" appearance="outline" fxFlex="100">
+                            <mat-icon class="cursor" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            <mat-label>Contraseña</mat-label>
+                            <input type="password" matInput formControlName="password" required
+                                [type]="hide ? 'password' : 'text'">
+                            <mat-error>Campo obligatorio!</mat-error>
+                        </mat-form-field>
+
+                        <a type="button" class="text-muted d-block" (click)="changeForm(2)">¿Olvido su contraseña?</a>
+                        <br>
+
+                        <button type="submit" class="btn d-block w-100 p-3 mb-4">Ingresar</button>
+
+                        <!-- <p class="text">
+                            ¿No tienes una cuenta? <a type="button" class="text-muted"
+                                (click)="changeForm(1)">Regístrate aquí</a>
+                        </p> -->
+
+                    </div>
+
+                </form>
+
+            </mat-card>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modulo para registrar -->
+
+<!-- <div class="bg" *ngIf="selectedFormAuthentic===1">
+    <div class="row justify-content-center px-5">
+        <div class="col-12 px-5">
+            <mat-card class="text-center text-muted">
+                <h1>Información personal</h1>
+                <form class="example-form">
+
+                    <div class="container mb-4">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Nombre *</mat-label>
+                            <input type="text" matInput placeholder="Ej. Edinson">
+                            <mat-error
+                                *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                Porfavor coloque un email valido!
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                                Email es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Correo electronico *</mat-label>
+                            <input type="email" matInput placeholder="Ej. goya@example.com">
+                            <mat-error
+                                *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                Porfavor coloque un email valido!
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                                Email es <strong>requerido</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Contraseña *</mat-label>
+                            <input type="password" matInput>
+                            <mat-error
+                                *ngIf="passwordFormControl.hasError('email') && !passwordFormControl.hasError('required')">
+                                Porfavor coloque una contraseña valida
+                            </mat-error>
+                            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                                Contraseña <strong>requerida</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Confirmar contraseña *</mat-label>
+                            <input type="password" matInput>
+                            <mat-error
+                                *ngIf="passwordFormControl.hasError('email') && !passwordFormControl.hasError('required')">
+                                Porfavor coloque una contraseña valida
+                            </mat-error>
+                            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                                Contraseña <strong>requerida</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <button class="btn d-block w-100 p-3 mb-4">Registrarse</button>
+
+                        <p class="text text-muted">
+                            ¿Ya tiene una cuenta? <a type="button" class="text-muted" (click)="changeForm(0)">Inicia
+                                sesión</a>
+                        </p>
+
+                    </div>
+
+                </form>
+
+            </mat-card>
+        </div>
+    </div>
+
+</div> -->
+
+<!-- Modulo para recuperar contraseña -->
+
+<div class="bg" *ngIf="selectedFormAuthentic===2">
+    <div class="row justify-content-center px-5">
+        <div class="col-12 px-5">
+            <mat-card class="text-center text-muted">
+                <h1>Recuperar contraseña</h1>
+                
+                <p class="text-muted px-3">
+                    Introduzca su correo electrónico.
+                    Le enviaremos un enlace para restablecer su contraseña
+                </p>
+                <form class="example-form">
+
+                    <div class="container mb-4">
+                        <mat-form-field class="example-full-width" appearance="outline" fxFlex="100">
+                            <mat-icon matSuffix>local_post_office</mat-icon>
+                            <mat-label>Correo electronico</mat-label>
+                            <input type="text" matInput formControlName="email" required>
+                            <mat-error>Campo obligatorio!</mat-error>
+                        </mat-form-field>
+
+                        <button type="submit" class="btn d-block w-100 p-3 mb-2">Recuperar contraseña</button>
+
+                        <button class="btn d-block w-100 mb-4 back text-muted" (click)="changeForm(0)">Regresar</button>
+
+                    </div>
+
+                </form>
+
+            </mat-card>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,21 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.logo {
+    width: 50px;
+}
+
+.user {
+    width: 40px!important;
+    height: 40px!important;
+}
+
+mat-icon {
+    margin-right: 5px!important;
+}
+
+.fa-bars {
+    font-size: 1.5em!important;
+    color: #fff;
+}
